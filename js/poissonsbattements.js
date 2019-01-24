@@ -14,7 +14,7 @@ function setup() {
   flock = new Flock();
 
   // Add an initial set of boids into the system // 
-  for (var i = 0; i < 30; i++) {
+  for (var i = 0; i < 12; i++) {
     //var b = new Boid(random(width), random(height));
     var b = new Boid(width / 2, height / 2);
     flock.addBoid(b);
@@ -45,7 +45,7 @@ function Flock() {
   this.boids = []; // Initialize the array
 }
 Flock.prototype.run = function() {
-  if (this.boids.length > 100) {
+  if (this.boids.length > 36) {
     this.boids.splice(0, 1);
   }
   for (var i = 0; i < this.boids.length; i++) {
